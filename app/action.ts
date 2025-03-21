@@ -1,6 +1,6 @@
 "use server";
 
-import nodemailer from "nodemailer";
+// import nodemailer from "nodemailer";
 import { db } from "@/lib/db";
 import { FormState, SignupFormSchema } from "@/lib/definitions";
 import { redirect } from "next/navigation";
