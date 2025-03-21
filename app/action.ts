@@ -19,12 +19,26 @@ export async function signup(state: FormState, formData: FormData) {
   }
   const { username, email } = validatedFields.data;
 
+  const existingUser = await db.user.findUnique({
+    where: {
+      username,
+    },
+  });
+  if (existingUser) {
+    return {
+      errors: {
+        username: ["Username already exists"],
+      },
+    };
+  }
+
   await db.user.create({
     data: {
       username,
       email,
     },
   });
+  /*
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -39,7 +53,7 @@ export async function signup(state: FormState, formData: FormData) {
     to: email,
     subject: "Confirmation email",
     html: generateHTML(),
-  });
+  });*/
 
   redirect("/success");
 }
