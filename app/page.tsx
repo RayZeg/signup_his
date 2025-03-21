@@ -12,8 +12,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import axios from "axios";
-import { useRouter } from "next/navigation";
+// import axios from "axios";
+// import { useRouter } from "next/navigation";
 import { useActionState, useState } from "react";
 import { signup } from "./action";
 
@@ -23,7 +23,7 @@ const defaultUser: User = {
 };
 
 export default function Home() {
-  const router = useRouter();
+  // const router = useRouter();
   const [user, setUser] = useState<User>(defaultUser);
 
   // proper backend handling machi b node
@@ -34,6 +34,7 @@ export default function Home() {
   }
 
   //example on how to call next api from frontend
+  /*
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     axios
@@ -42,7 +43,7 @@ export default function Home() {
       .catch((error) => console.log(error))
       .finally(() => router.push("/success"));
   }
-
+*/
   // too lazy to seperate into diffrent components split em ur selfs
   return (
     <div className="flex items-center justify-center h-dvh">

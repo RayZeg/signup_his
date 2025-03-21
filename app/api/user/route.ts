@@ -7,13 +7,23 @@ export async function POST(request: NextRequest) {
   try {
     const { username, email } = await request.json();
 
-    const user: User = await db.user.create({
+    await db.user.create({
       data: {
         username,
         email,
       },
     });
 
+    /*
+    you could fetch the data back like this
+    
+    const user: User = await db.user.create({
+      data: {
+        username,
+        email,
+      },
+    });
+    */
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {

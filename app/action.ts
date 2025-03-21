@@ -19,7 +19,7 @@ export async function signup(state: FormState, formData: FormData) {
   }
   const { username, email } = validatedFields.data;
 
-  const user: User = await db.user.create({
+  await db.user.create({
     data: {
       username,
       email,
