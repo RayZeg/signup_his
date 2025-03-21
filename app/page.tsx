@@ -96,7 +96,7 @@ export default function Home() {
                       <div className="text-sm text-red-500">
                         {state?.errors?.email && (
                           <p className="text-sm text-red-500">
-                            {state.errors.username}
+                            {state.errors.email}
                           </p>
                         )}
                       </div>
