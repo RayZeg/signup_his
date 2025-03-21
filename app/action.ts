@@ -57,7 +57,7 @@ export async function signup(state: FormState, formData: FormData) {
 
   redirect("/success");
 }
-
+/*
 function generateHTML() {
   return `
       <div>
@@ -65,4 +65,4 @@ function generateHTML() {
         <p>Registration confirmed ✅</p>
       </div>
     `;
-}
+}*/
